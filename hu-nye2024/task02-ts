@@ -1,0 +1,17 @@
+function reduzirParaUnicos<T>(array: T[]): T[] {
+  const conjunto = new Set<T>();
+  const unicos: T[] = [];
+
+  for (const elemento of array) {
+      if (!conjunto.has(elemento)) {
+          conjunto.add(elemento);
+          unicos.push(elemento);
+      }
+  }
+
+  return unicos;
+}
+
+const arrayEntrada = [1, 2, 3, 2, 4, 5, 1, 6, 7, 3, 8, 9, 4];
+const unicos = reduzirParaUnicos(arrayEntrada);
+console.log(unicos); // Saída: [1, 2, 3, 4, 5, 6, 7, 8, 9]
